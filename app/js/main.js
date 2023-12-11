@@ -10,7 +10,7 @@ if (window.innerWidth > 768) {
     searchButton.addEventListener("click", () => {
         searchInput.classList.toggle("open");
         searchButton.classList.toggle("open_btn")
-        logoTxt.classList.toggle("h-hidden")
+        logoTxt.classList.toggle("open")
     });
 }
 

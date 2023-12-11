@@ -323,7 +323,9 @@ textarea {
   font-size: 17px;
   margin-left: 10px;
   white-space: nowrap;
-  position: relative;
+  visibility: visible;
+  opacity: 1;
+  max-width: 400px;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease
@@ -344,6 +346,14 @@ textarea {
 .header__logo:hover span::after {
   max-width: 100%;
   opacity: 1
+}
+.header__logo .open {
+  max-width: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease
 }
 .header__search {
   display: -webkit-box;
@@ -379,41 +389,41 @@ textarea {
   font-weight: 300;
   color: var(--black);
   opacity: 50%;
-  -webkit-transition: all 10ms ease;
-  transition: all 10ms ease
+  -webkit-transition: all 30ms ease;
+  transition: all 30ms ease
 }
 .header__search input::-moz-placeholder {
   font-size: 16px;
   font-weight: 300;
   color: var(--black);
   opacity: 50%;
-  -moz-transition: all 10ms ease;
-  transition: all 10ms ease
+  -moz-transition: all 30ms ease;
+  transition: all 30ms ease
 }
 .header__search input:-ms-input-placeholder {
   font-size: 16px;
   font-weight: 300;
   color: var(--black);
   opacity: 50%;
-  -ms-transition: all 10ms ease;
-  transition: all 10ms ease
+  -ms-transition: all 30ms ease;
+  transition: all 30ms ease
 }
 .header__search input::-ms-input-placeholder {
   font-size: 16px;
   font-weight: 300;
   color: var(--black);
   opacity: 50%;
-  -ms-transition: all 10ms ease;
-  transition: all 10ms ease
+  -ms-transition: all 30ms ease;
+  transition: all 30ms ease
 }
 .header__search input::placeholder {
   font-size: 16px;
   font-weight: 300;
   color: var(--black);
   opacity: 50%;
-  -webkit-transition: all 10ms ease;
-  -o-transition: all 10ms ease;
-  transition: all 10ms ease
+  -webkit-transition: all 30ms ease;
+  -o-transition: all 30ms ease;
+  transition: all 30ms ease
 }
 .header__search button {
   background: var(--blue);
@@ -450,27 +460,6 @@ textarea {
   -o-transition: all .3s ease;
   transition: all .3s ease
 }
-.header__search .open::-webkit-input-placeholder {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease
-}
-.header__search .open::-moz-placeholder {
-  -moz-transition: all .3s ease;
-  transition: all .3s ease
-}
-.header__search .open:-ms-input-placeholder {
-  -ms-transition: all .3s ease;
-  transition: all .3s ease
-}
-.header__search .open::-ms-input-placeholder {
-  -ms-transition: all .3s ease;
-  transition: all .3s ease
-}
-.header__search .open::placeholder {
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease
-}
 .header__search .open_btn {
   border-radius: 0 5px 5px 0;
   -webkit-transition: all .3s ease;
@@ -502,29 +491,31 @@ textarea {
   width: 100%
 }
 .office__list li {
-  width: 100%;
-  padding: 25px 15px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 10px 25px 0 rgba(0,0,0,.1);
-  box-shadow: 0 10px 25px 0 rgba(0,0,0,.1);
-  margin-bottom: 15px;
-  background: var(--white);
-  border: 1px solid var(--white);
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
-  cursor: pointer
+  margin-bottom: 15px
 }
 .office__list li:last-child {
   margin-bottom: 0
-}
-.office__list li:hover {
-  border: 1px solid var(--blue)
 }
 .office__list li img {
   width: 55px;
   height: 55px;
   margin: 0 auto
+}
+.office__list a {
+  display: block;
+  border: 1px solid var(--white);
+  background: var(--white);
+  border-radius: 5px;
+  padding: 25px 15px;
+  width: 100%;
+  -webkit-box-shadow: 0 10px 25px 0 rgba(0,0,0,.1);
+  box-shadow: 0 10px 25px 0 rgba(0,0,0,.1);
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease
+}
+.office__list a:hover {
+  border: 1px solid var(--blue)
 }
 .office__list .list__city {
   margin-bottom: 20px
@@ -575,7 +566,7 @@ textarea {
     grid-template-columns: 1fr 1fr;
     gap: 20px
   }
-  .office li {
+  .office__list a {
     padding: 25px 40px 25px 20px;
     margin: 0
   }
@@ -753,6 +744,11 @@ textarea {
   border-bottom: 1px solid var(--black);
   margin-bottom: 20px
 }
+.goods__title h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--black)
+}
 .goods__product img {
   max-width: 266px;
   margin: 0 auto;
@@ -875,8 +871,7 @@ textarea {
   background-color: var(--blue);
   border-radius: 5px;
   width: 100%;
-  border: 1px solid var(--blue);
-  margin: -1
+  border: 1px solid var(--blue)
 }
 .goods__work__body {
   max-height: 0;
@@ -892,6 +887,85 @@ textarea {
   font-weight: 400;
   line-height: 23px;
   color: var(--black)
+}
+@media screen and (min-width:768px) {
+  .goods {
+    padding: 45px 0 100px
+  }
+  .goods__title {
+    font-size: 36px;
+    font-weight: 500;
+    padding-bottom: 15px
+  }
+  .goods__title h2 {
+    font-size: 36px
+  }
+  .goods__product {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 31px
+  }
+  .goods__product img {
+    margin-bottom: 0;
+    max-width: 294px
+  }
+  .goods__product h3 {
+    font-size: 16px
+  }
+  .goods__product p {
+    font-size: 16px;
+    margin-bottom: 21px
+  }
+  .goods__product__price {
+    margin-bottom: 0
+  }
+  .goods__product__price p {
+    font-size: 16px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+  .goods__product__price span {
+    margin-left: 20px;
+    font-size: 20px
+  }
+  .goods__list {
+    margin-top: 35px
+  }
+  .goods__list__head {
+    font-size: 20px
+  }
+  .goods__list__body p {
+    font-size: 16px
+  }
+  .goods__rht h3 {
+    font-size: 20px;
+    margin-bottom: 27px
+  }
+  .goods__work__head {
+    font-size: 16px
+  }
+  .goods__work__body p {
+    font-size: 16px
+  }
+  .goods__work li {
+    margin-bottom: 20px
+  }
+}
+@media screen and (min-width:992px) {
+  .goods__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px
+  }
+  .goods__lft {
+    margin-bottom: 0
+  }
 }
 .footer {
   padding: 30px 0 15px;

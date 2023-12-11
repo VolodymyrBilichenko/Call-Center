@@ -140,7 +140,9 @@ select {
       font-size: 17px;
       margin-left: 10px;
       white-space: nowrap;
-      position: relative;
+      visibility: visible;
+      opacity: 1;
+      max-width: 400px;
       transition: all .3s ease;
       &::after{
         display: block;
@@ -153,13 +155,18 @@ select {
         margin: 0 auto;
         margin-top: -5px;
       }
-
     }
     &:hover{
       span::after{
         max-width: 100%;
         opacity: 1;
       }
+    }
+    .open{
+        max-width: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .2s ease;
     }
   }
 
@@ -188,7 +195,7 @@ select {
         font-weight: 300;
         color: var(--black);
         opacity: 50%;
-        transition: all .01s ease;
+        transition: all .03s ease;
       }
     }
     button{
@@ -218,10 +225,6 @@ select {
       visibility: visible;
       opacity: 1;
       transition: all .3s ease;
-
-      &::placeholder{
-        transition: all .3s ease;
-      }
     }
     .open_btn{
       border-radius: 0 5px 5px 0;
@@ -259,27 +262,40 @@ select {
   &__list{
     width: 100%;
 
+    // li{
+    //   margin-bottom: 15px;
+    //   display: block;
+    //   &:last-child{
+    //     margin-bottom: 0;
+    //   }
+
+      
+    // }
+
     li{
-      width: 100%;
-      padding: 25px 15px;
-      border-radius: 5px;
-      box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.10);
       margin-bottom: 15px;
-      background: var(--white);
-      border: 1px solid var(--white);
-      transition: all .3s ease;
-      cursor: pointer;
       &:last-child{
         margin-bottom: 0;
-      }
-      &:hover{
-        border: 1px solid var(--blue);
       }
 
       img{
         width: 55px;
         height: 55px;
         margin: 0 auto;
+      }
+    }
+
+    a{
+      display: block;
+      border: 1px solid var(--white);
+      background: var(--white);
+      border-radius: 5px;
+      padding: 25px 15px;
+      width: 100%;
+      box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.10);
+      transition: all .3s ease;
+      &:hover{
+        border: 1px solid var(--blue);
       }
     }
 
@@ -324,11 +340,14 @@ select {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+
+      a{
+        padding: 25px 40px 25px 20px;
+        margin: 0;
+      }
     }
 
     li{
-      padding: 25px 40px 25px 20px;
-      margin: 0;
       img{
         margin: 0;
       }
@@ -493,6 +512,12 @@ select {
     padding-bottom: 10px;
     border-bottom: 1px solid var(--black);
     margin-bottom: 20px;
+
+    h2{
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--black);
+    }
   }
 
   &__product{
@@ -635,7 +660,6 @@ select {
       border-radius: 5px;
       width: 100%;
       border: 1px solid var(--blue);
-      margin: -1;
     }
     &__body{
       max-height: 0;
@@ -650,6 +674,97 @@ select {
         line-height: 23px;
         color: var(--black);
       }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 45px 0 100px;
+
+    &__title{
+      font-size: 36px;
+      font-weight: 500;
+      padding-bottom: 15px;
+      h2{
+        font-size: 36px;
+      }
+    }
+
+    &__product{
+      display: flex;
+      align-items: center;
+      gap: 31px;
+
+      img{
+        margin-bottom: 0;
+        max-width: 294px;
+      }
+
+      h3{
+        font-size: 16px;
+      }
+      p{
+        font-size: 16px;
+        margin-bottom: 21px;
+      }
+
+      &__price{
+        margin-bottom: 0;
+        p{
+          font-size: 16px;
+          align-items: center;
+        }
+        span{
+          margin-left: 20px;
+          font-size: 20px;
+        }
+      }
+    }
+
+    &__list{
+      margin-top: 35px;
+    }
+
+    &__list__head{
+      font-size: 20px;
+    }
+
+    &__list__body{
+      p{
+        font-size: 16px;
+      }
+    }
+
+    &__rht{
+      h3{
+        font-size: 20px;
+        margin-bottom: 27px;
+      }
+    }
+
+    &__work__head{
+      font-size: 16px;
+    }
+    &__work__body{
+      p{
+        font-size: 16px;
+      }
+    }
+
+    &__work{
+      li{
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    &__inner{
+      display: flex;
+      gap: 20px;
+    }
+
+    &__lft{
+      margin-bottom: 0;
     }
   }
 }
