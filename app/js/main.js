@@ -19,9 +19,15 @@ if (window.innerWidth > 768) {
 const goodsList = document.querySelectorAll('.goods__list li');
 
 goodsList.forEach(item => {
-    item.addEventListener('click', () => {
-        item.classList.toggle('goods__active')
+    const buttonHead = item.querySelector('.goods__list__head');
+
+    buttonHead.addEventListener('click', () => {
+        item.classList.toggle('goods__active');
+        
+        const bodyList = item.querySelector('.goods__list__body');
+        bodyList.style.display = item.classList.contains('goods__active')
     })
+
 })
 
 // open acardeon 2
@@ -29,7 +35,12 @@ goodsList.forEach(item => {
 const goodsWork = document.querySelectorAll('.goods__work li');
 
 goodsWork.forEach(item => {
-    item.addEventListener('click', () => {
-        item.classList.toggle('goods__active')
-    })
-})
+  const buttonHead = item.querySelector('.goods__work__head');
+
+  buttonHead.addEventListener('click', () => {
+    item.classList.toggle('goods__active');
+
+    const bodyWork = item.querySelector('.goods__work__body');
+    bodyWork.style.display = item.classList.contains('goods__active')
+  });
+});
