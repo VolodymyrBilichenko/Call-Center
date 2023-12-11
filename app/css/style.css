@@ -377,27 +377,32 @@ textarea {
 .header__search input::-webkit-input-placeholder {
   font-size: 16px;
   font-weight: 300;
-  color: var(--black)
+  color: var(--black);
+  opacity: 50%
 }
 .header__search input::-moz-placeholder {
   font-size: 16px;
   font-weight: 300;
-  color: var(--black)
+  color: var(--black);
+  opacity: 50%
 }
 .header__search input:-ms-input-placeholder {
   font-size: 16px;
   font-weight: 300;
-  color: var(--black)
+  color: var(--black);
+  opacity: 50%
 }
 .header__search input::-ms-input-placeholder {
   font-size: 16px;
   font-weight: 300;
-  color: var(--black)
+  color: var(--black);
+  opacity: 50%
 }
 .header__search input::placeholder {
   font-size: 16px;
   font-weight: 300;
-  color: var(--black)
+  color: var(--black);
+  opacity: 50%
 }
 .header__search button {
   background: var(--blue);
