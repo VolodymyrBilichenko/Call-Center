@@ -234,6 +234,9 @@ select {
     }
 
     &__search{
+      input{
+        padding: 9px 20px;
+      }
       span{
         display: block;
       }
