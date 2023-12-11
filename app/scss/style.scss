@@ -188,6 +188,7 @@ select {
         font-weight: 300;
         color: var(--black);
         opacity: 50%;
+        transition: all .01s ease;
       }
     }
     button{
@@ -217,6 +218,10 @@ select {
       visibility: visible;
       opacity: 1;
       transition: all .3s ease;
+
+      &::placeholder{
+        transition: all .3s ease;
+      }
     }
     .open_btn{
       border-radius: 0 5px 5px 0;
@@ -373,6 +378,110 @@ select {
       margin-top: 55px;
       font-size: 16px;
       padding: 20px 50px;
+    }
+  }
+}
+
+.product{
+  padding: 25px 0 60px;
+
+  &__title{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 15px;
+
+    h2{
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--black);
+      white-space: nowrap;
+    }
+    h3{
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gray);
+    }
+    p{
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--blue);
+    }
+  }
+
+  &__list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+
+    a{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+      background: var(--white);
+      box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.10);
+      padding: 20px 59px;
+      border: 1px solid var(--white);
+      transition: all .3s ease;
+
+      &:hover{
+        border: 1px solid var(--blue);
+      }
+    }
+
+    img{
+      max-width: 167px;
+      margin-bottom: 25px;
+    }
+
+    p{
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--black);
+      width: 100%;
+      max-width: 187px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 48px 0 80px;
+
+    &__title{
+      margin-bottom: 38px;
+
+      h2{
+        font-size: 36px;
+        font-weight: 500;
+      }
+      h3{
+        font-size: 16px;
+      }
+      p{
+        font-size: 15px;
+      }
+    }
+
+    &__list{
+      align-items: start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      a{
+        padding: 20px 58px;
+      }
+      img{
+        max-width: 170px;
+        margin-bottom: 30px;
+      }
+      p{
+        font-size: 16px;
+      }
     }
   }
 }
