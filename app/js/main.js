@@ -13,3 +13,23 @@ if (window.innerWidth > 768) {
         logoTxt.classList.toggle("h-hidden")
     });
 }
+
+// open acardeon
+
+const goodsList = document.querySelectorAll('.goods__list li');
+
+goodsList.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('goods__active')
+    })
+})
+
+// open acardeon 2
+
+const goodsWork = document.querySelectorAll('.goods__work li');
+
+goodsWork.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('goods__active')
+    })
+})
